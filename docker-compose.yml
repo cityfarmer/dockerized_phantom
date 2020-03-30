@@ -6,4 +6,3 @@ services:
     privileged: true
     ports:
       - 443:443
-      - 6432:6432
