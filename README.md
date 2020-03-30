@@ -8,7 +8,9 @@ Phantom Docker
 #reboot
 ```
 2.  Edit Nameserver to 10.2.1.100 and 10.220.1.100
-`#vi /etc/resolv.conf`  
+```
+#vi /etc/resolv.conf
+```  
 3.  Install docker and git and modify SELINUX CGroup Setting
 ```
 #yum -y install docker git
