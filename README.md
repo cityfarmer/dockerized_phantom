@@ -29,8 +29,17 @@ Phantom Docker
 ```
 #docker exec -ti phantom01 /bin/bash
 #/opt/phantom/bin/phantom_setup.sh install
+....
+....
+Installing phantom apps
+Loaded plugins: fastestmirror, ovl
+Cleaning repos: base extras phantom-apps phantom-base updates
+Cleaning up everything
+Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
+Cleaning up list of fastest mirrors
 ```
 3.  When phantom_setup.sh stops Enter Key Combo below to break from container
+   *NOTE:  install script does not return, but when you see the lines above it is complete*
 ```
 [Ctrl P] then [Ctrl Q]
 ```
