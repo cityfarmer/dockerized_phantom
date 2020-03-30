@@ -30,6 +30,12 @@ Phantom Docker
 #docker exec -ti phantom01 /bin/bash
 #/opt/phantom/bin/phantom_setup.sh install
 ....
+About to proceed with Phantom install
+Do you wish to proceed [y/N]
+y
+sed: can't read /opt/phantom/bin/stop_phantom.sh: No such file or directory
+Enter username: steve.peck@wwt.com
+Enter password: 
 ....
 Installing phantom apps
 Loaded plugins: fastestmirror, ovl
