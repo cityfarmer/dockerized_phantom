@@ -1,7 +1,7 @@
 version: '1.0'
 services:
   phantom: 
-    image: phantom
+    image: phantom:1.0
     container_name: splunk_phantom
     privileged: true
     ports:
