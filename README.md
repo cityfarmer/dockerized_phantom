@@ -15,24 +15,40 @@ Phantom Docker
 ```
 #yum -y install docker git
 #setsebool -P container_manage_cgroup 1
-#eval $(ssh-agent -s)
-#ssh-add /root/.ssh/git
-#git pull 
+#git clone git@github.com:cityfarmer/dockerized_phantom.git 
 ```
 
 ## Interactive Method
-
-cd ws1
-docker build -t phantom .
-docker run -tid -p 443:443 --name phantom01 phantom
-docker ps (copy container id)
-docker exec -ti -u root <containerid> /bin/bash
-yum install deltarpm openssl python compat-openssl10 -y
-rpm -U https://repo.phantom.us/phantom/4.8/base/7/x86_64/nginx-1.17.7-1.el7.ngx.x86_64.rpm
-rpm -Uvh https://repo.phantom.us/phantom/4.8/base/7/x86_64/phantom_repo-4.8.24304-1.x86_64.rpm
-/opt/phantom/bin/phantom_setup.sh install
-Key Combination [Ctrl P] then [Ctrl Q]     #Break from container
-
-Try Phantom admin console https://<ip>  admin password
-commit <containerid> phantom:1.0
-docker stop <containterid>
+1.  Build Docker Image and Start Container
+```
+#cd dockerized_phantom
+#docker build -t phantom:1.0 .
+#docker run -tid -p 443:443 --name phantom01 phantom:1.0
+```
+2. Execute session in container and run dependencies and startup scripts
+```
+#docker exec -ti phantom01 /bin/bash
+#/opt/phantom/bin/phantom_setup.sh install
+```
+3.  When phantom_setup.sh stops Enter Key Combo below to break from container
+```
+[Ctrl P] then [Ctrl Q]
+```
+4.  Try Phantom admin console https://ip
+  - admin 
+  - password
+5.  Commit container changes to Image
+```
+#commit phantom01 phantom:2.0
+#docker stop phantom01
+```
+## Admin Commands (Optional)
+1.  Restart containter
+```
+#docker start phantom01
+```
+2.  Remove containter and restart from image
+  ```
+  #docker rm -f phantom01
+  #docker run -tid --name phantom02 -p 443:443 phantom:2.0 
+  ```
