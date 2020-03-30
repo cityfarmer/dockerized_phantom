@@ -15,6 +15,9 @@ Phantom Docker
 ```
 #yum -y install docker git
 #setsebool -P container_manage_cgroup 1
+#eval $(ssh-agent -s)
+#ssh-add /root/.ssh/git
+#git pull 
 ```
 
 ## Interactive Method
