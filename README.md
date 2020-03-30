@@ -34,8 +34,8 @@ About to proceed with Phantom install
 Do you wish to proceed [y/N]
 y
 sed: can't read /opt/phantom/bin/stop_phantom.sh: No such file or directory
-Enter username: steve.peck@wwt.com
-Enter password: 
+Enter username: <put in your username>
+Enter password: <put in your password>
 ....
 Installing phantom apps
 Loaded plugins: fastestmirror, ovl
